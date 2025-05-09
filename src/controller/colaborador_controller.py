@@ -47,9 +47,9 @@ def atualizar_dados_colaborador(id_colaborador):
     colaborador = db.session.execute(
         db.select(Colaborador).where(Colaborador.id == id_colaborador)
     )
-    for colaborador in Colaborador:
-        if colaborador['id'] == id_colaborador:
-            colaborador_encontrado = colaborador
+    for dados_colaborador in colaborador:
+        if dados_colaborador['id'] == id_colaborador:
+            colaborador_encontrado = dados_colaborador
             break
     if 'nome' in dados_requisicao:
             colaborador_encontrado['nome'] = dados_requisicao['nome']
